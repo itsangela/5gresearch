@@ -378,7 +378,7 @@ PfFfMacScheduler::LcActivePerFlow (uint16_t rnti)
 uint8_t
 PfFfMacScheduler::HarqProcessAvailability (uint16_t rnti)
 {
-  NS_LOG_FUNCTION (this << rnti);
+  //NS_LOG_FUNCTION (this << rnti);
 
   std::map <uint16_t, uint8_t>::iterator it = m_dlHarqCurrentProcessId.find (rnti);
   if (it == m_dlHarqCurrentProcessId.end ())
@@ -911,6 +911,7 @@ PfFfMacScheduler::DoSchedDlTriggerReq (const struct FfMacSchedSapProvider::Sched
   m_dlInfoListBuffered.clear ();
   m_dlInfoListBuffered = dlInfoListUntxed;
 
+  NS_LOG_INFO(this << "Number of Resource Blocks Allocated " << rbgAllocatedNum);
   if (rbgAllocatedNum == rbgNum)
     {
       // all the RBGs are already allocated -> exit
@@ -1256,7 +1257,7 @@ PfFfMacScheduler::DoSchedDlRachInfoReq (const struct FfMacSchedSapProvider::Sche
 void
 PfFfMacScheduler::DoSchedDlCqiInfoReq (const struct FfMacSchedSapProvider::SchedDlCqiInfoReqParameters& params)
 {
-  NS_LOG_FUNCTION (this);
+  //NS_LOG_FUNCTION (this);
   m_ffrSapProvider->ReportDlCqiInfo (params);
 
   for (unsigned int i = 0; i < params.m_cqiList.size (); i++)
