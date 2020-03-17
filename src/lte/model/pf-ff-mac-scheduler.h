@@ -415,6 +415,10 @@ private:
 
 };
 
+//try ...
+extern double ulPRBUsage;
+extern double dlPRBUsage;
+
 } // namespace ns3
 
 #endif /* PF_FF_MAC_SCHEDULER_H */
